@@ -1,0 +1,48 @@
+name: Bug report
+description: Something went wrong
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        If photos may be missing: **don't run SafeMove again yet.** First check `<destination>\logs\manifest.csv`,
+        which lists every file moved and where it went.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps
+      placeholder: |
+        1. Mode (oldest N GB / month / day), size, test mode on/off
+        2. ...
+  - type: input
+    id: version
+    attributes:
+      label: SafeMove version
+      description: Settings > Apps > SafeMove, or safemove/__init__.py
+      placeholder: e.g. 1.2.0
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: iPhone model and iOS version
+      placeholder: e.g. iPhone 11 Pro Max, iOS 18.0
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      placeholder: e.g. Windows 11 24H2
+  - type: textarea
+    id: log
+    attributes:
+      label: Run log (optional)
+      description: From `<destination>\logs\<date>.txt`. It contains file names; remove anything you consider private.
+      render: text

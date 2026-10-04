@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Build output (recreate with: python build_portable.py)
+build/
+dist/
+
+# comtypes writes generated wrappers next to itself; never commit them
+lib/comtypes/gen/*
+!lib/comtypes/gen/__init__.py
+
+# Local runs: photos, logs and probe output live outside the repo (C:\SafeMove),
+# but never commit them if a destination is pointed inside the project by mistake
+images/
+videos/
+logs/
+.staging/
+_probe/
+
+# Editors / OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini

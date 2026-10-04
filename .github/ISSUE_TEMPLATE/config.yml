@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: User guide
+    url: https://github.com/tenotech/SafeMove/blob/main/docs/USER_GUIDE.md
+    about: Install, everyday use, troubleshooting and FAQ

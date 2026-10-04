@@ -1,0 +1,49 @@
+name: Device report (new iPhone / iOS)
+description: Help support another iPhone model or iOS version. Read-only, no personal data.
+title: "Device report: <iPhone model>, iOS <version>"
+labels: [device-support]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks! With the iPhone connected and unlocked, run **"SafeMove - device report"** from the Start menu
+        (or `python -m safemove.report`). It writes `SafeMove-device-report.txt` on your Desktop.
+        The report contains no file names, no serial number and no device name.
+  - type: input
+    id: model
+    attributes:
+      label: iPhone model
+      placeholder: e.g. iPhone 15 Pro
+    validations:
+      required: true
+  - type: input
+    id: ios
+    attributes:
+      label: iOS version (Settings > General > About)
+      placeholder: e.g. 18.1
+    validations:
+      required: true
+  - type: textarea
+    id: report
+    attributes:
+      label: Device report
+      description: Paste the content of SafeMove-device-report.txt
+      render: markdown
+    validations:
+      required: true
+  - type: dropdown
+    id: works
+    attributes:
+      label: Does SafeMove find your photos?
+      options:
+        - "Yes, test mode works"
+        - "Yes, and a real move (with deletion) worked"
+        - "No: 'photo folders have names this version doesn't recognize'"
+        - "No: other problem (describe below)"
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: e.g. iPhone setting "Transfer to Mac or PC", how the folders look in Explorer
